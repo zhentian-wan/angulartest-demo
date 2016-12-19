@@ -1,3 +1,11 @@
 <h1>
   {{title}}
 </h1>
+<pre>
+  total heros: {{heros?.length}}
+</pre>
+<ul>
+  <li *ngFor="let hero of heros">
+    {{hero | json}}
+  </li>
+</ul>
