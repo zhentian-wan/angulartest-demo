@@ -3,7 +3,6 @@ import {AppComponent} from './app.component';
 import {HerosService} from "./heros.service";
 import {By} from "@angular/platform-browser";
 import {HttpModule} from "@angular/http";
-import {STARWARS_BASE_URL} from "./app.module";
 
 let fixture, comInstance, herosService, element, de;
 
@@ -16,9 +15,7 @@ describe('AppComponent', () => {
       providers: [
         HerosService
       ],
-      imports: [
-        HttpModule
-      ]
+      imports: [ HttpModule ]
     });
     TestBed.compileComponents();
   });
@@ -60,15 +57,4 @@ describe('AppComponent', () => {
     expect(expected).toBe(result);
   }));
 
-  it('should be able to get heros from service', async(() => {
-    herosService.getHeros()
-      .subscribe(()=> {
-        fixture.detectChanges();
-        fixture.whenStable()
-          .then(() => {
-            const expected = comInstance.heros.length;
-            expect(expected).toBe(82);
-          });
-      });
-  }))
 });
