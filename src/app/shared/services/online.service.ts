@@ -8,7 +8,6 @@ export class OnlineService {
     setInterval(() => {
 
       this.online = Math.random() > 0.5;
-      console.log("this.online", this.online)
     }, 1000);
   }
 
