@@ -8,6 +8,10 @@ import {HerosService} from "./heros.service";
 import { TextDirective } from './shared/directives/text.directive';
 import { GetInputDirective } from './shared/directives/get-input.directive';
 import { ClickableDirective } from './shared/directives/clickable.directive';
+import { TrackDirective } from './shared/directives/track.directive';
+import {TrackingService} from "./shared/services/tracking.service";
+import { OnlineDirective } from './shared/directives/online.directive';
+import {OnlineService} from "./shared/services/online.service";
 
 export const STARWARS_BASE_URL =
   new OpaqueToken('starwar_base');
@@ -17,7 +21,9 @@ export const STARWARS_BASE_URL =
     AppComponent,
     TextDirective,
     GetInputDirective,
-    ClickableDirective
+    ClickableDirective,
+    TrackDirective,
+    OnlineDirective
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,9 @@ export const STARWARS_BASE_URL =
     HttpModule
   ],
   providers: [
-    HerosService
+    HerosService,
+    TrackingService,
+    OnlineService
   ],
   bootstrap: [AppComponent]
 })
