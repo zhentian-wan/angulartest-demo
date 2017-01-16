@@ -15,6 +15,9 @@ import {OnlineService} from "./shared/services/online.service";
 import {BasicComponent} from './basic/basic.component';
 import { StructureDirective } from './shared/directives/structure.directive';
 import {ThreeDirective} from "./shared/directives/sturcutre2.directive";
+import {SurroundDirective} from "./shared/directives/surround.directive";
+import {TemplatesService} from "./shared/services/templates.service";
+import {TemplateStorageComponent} from "./template-stroage";
 
 export const STARWARS_BASE_URL =
   new OpaqueToken('starwar_base');
@@ -29,7 +32,9 @@ export const STARWARS_BASE_URL =
     OnlineDirective,
     BasicComponent,
     StructureDirective,
-    ThreeDirective
+    ThreeDirective,
+    SurroundDirective,
+    TemplateStorageComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ export const STARWARS_BASE_URL =
   providers: [
     HerosService,
     TrackingService,
-    OnlineService
+    OnlineService,
+    TemplatesService
   ],
   bootstrap: [AppComponent]
 })
