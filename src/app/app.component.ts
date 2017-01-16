@@ -9,7 +9,11 @@ import {HerosService} from "./heros.service";
 export class AppComponent{
 
   title = 'app works!';
-  message: number = 3;
+  messages: Object = {
+    one: 'This is one',
+    two: 'This is two',
+    three: 'This is three',
+  };
   heros;
   constructor(private service: HerosService) {
     this.service.getHeros()

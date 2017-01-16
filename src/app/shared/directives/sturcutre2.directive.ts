@@ -3,18 +3,29 @@ import {Directive, Input, TemplateRef, ViewContainerRef} from "@angular/core";
   selector: '[three]'
 })
 export class ThreeDirective {
-  @Input() set three(value) {
+  @Input() set threeFrom({one, two, three}) {
     let num = 3;
 
-    while (num--) {
-      const message = {
+    this.view.createEmbeddedView(this.template, {
+      $implicit: {
         to: "People" + Math.random(),
-        message: "Hello" + Math.random()
-      };
-      this.view.createEmbeddedView(this.template, {
-        $implicit: message
-      })
-    }
+        message: two
+      }
+    });
+
+    this.view.createEmbeddedView(this.template, {
+      $implicit: {
+        to: "People" + Math.random(),
+        message: three
+      }
+    });
+
+    this.view.createEmbeddedView(this.template, {
+      $implicit: {
+        to: "People" + Math.random(),
+        message: one
+      }
+    });
   }
 
   constructor(private template: TemplateRef<any>, private view: ViewContainerRef) {
