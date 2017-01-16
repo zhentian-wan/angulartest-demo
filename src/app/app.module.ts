@@ -13,6 +13,8 @@ import {TrackingService} from "./shared/services/tracking.service";
 import {OnlineDirective} from './shared/directives/online.directive';
 import {OnlineService} from "./shared/services/online.service";
 import {BasicComponent} from './basic/basic.component';
+import { StructureDirective } from './shared/directives/structure.directive';
+import {ThreeDirective} from "./shared/directives/sturcutre2.directive";
 
 export const STARWARS_BASE_URL =
   new OpaqueToken('starwar_base');
@@ -25,7 +27,9 @@ export const STARWARS_BASE_URL =
     ClickableDirective,
     TrackDirective,
     OnlineDirective,
-    BasicComponent
+    BasicComponent,
+    StructureDirective,
+    ThreeDirective
   ],
   imports: [
     BrowserModule,

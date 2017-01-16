@@ -2,9 +2,11 @@
   {{title}}
 </h1>
 <basic></basic>
-<button online [track]="'one is clicked'">One</button>
+<h1 *structure="'4'">This is structure directive</h1>
+<h2 *three="let message">{{message}}</h2>
+<!-- <button online [track]="'one is clicked'">One</button>
 <button [track]="'two is clicked'">Two</button>
-<button [track]="'three is clicked'">Three</button>
+<button [track]="'three is clicked'">Three</button> -->
 
 <!-- <pre>
   total heros: {{heros?.length}}
